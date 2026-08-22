@@ -6,4 +6,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Show the trigger
-              run: echo "the trigger is push"
+              run: echo |
+                  "the trigger is ${{github.event_name}}."
+                  "this is the new branch."
