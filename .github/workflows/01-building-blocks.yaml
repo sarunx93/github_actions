@@ -3,12 +3,12 @@ on: push
 
 jobs:
     echo-hello:
-        runs-on: unbuntu:latest
+        runs-on: ubuntu-latest
         steps:
             - name: Say Hello
               run: echo "Hello, world"
     echo-goodbye:
-        runs-on: ubuntu:latest
+        runs-on: ubuntu-latest
         steps:
             - name: Successful Step
               run: |
