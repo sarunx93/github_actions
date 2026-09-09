@@ -7,6 +7,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
-              uses: actions/checkout@v4
-            - name: Printing Folders
-              run: ls
+              uses: actions/checkout@v7
+            - name: Setup Node
+              uses: actions/setup-node@v6
+              with:
+                  node-version: '24.x'
+            - name: Install Dependencoes
+              run: npm ci
+              working-directory: 04-using-actions/react-app
