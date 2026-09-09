@@ -9,5 +9,5 @@ jobs:
     echo:
         runs-on: ubuntu-latest
         steps:
-            - name: Say Hello
-              run: echo "Hello, world"
+            - name: PR and Sync
+              run: echo "Running whenever a PR is opened or synchronized AND base branch is main"
