@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Print PR title
-              run: echp "${{github.event.pull_request.title}}"
+              run: echo "${{github.event.pull_request.title}}"
             - name: Bug step
               if: ${{!cancelled() && contains(github.event.pull_request.title, 'fix')}}
               run: echo "I am a bugfix"
