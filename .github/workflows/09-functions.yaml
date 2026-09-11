@@ -8,6 +8,8 @@ jobs:
     echo1:
         runs-on: ubuntu-latest
         steps:
+            - name: Sleep for 20 secs
+              run: sleep 20
             - name: Failing step
               run: |
                   echo "Error: Required file is missing!"
