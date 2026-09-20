@@ -30,8 +30,16 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: ${{inputs.node-version}}
+            - name: Download cached dependencies
+              uses: actions/cache@v6
+              if: ${{inputs.use-cache}}
+              id: cache
+              with:
+                  path: 04-using-actions/react-app/node_modules
+                  key: deps-node-modules-${{hashFiles('04-using-actions/react-app/package-lock.json')}}
             # 2. Install dependencies
             - name: Install Dependencies
+              if: steps.cache.outputs.cache-hit != 'true'
               run: npm ci
               # 3. Linting, formatting, unit test and building
             - name: Testing
